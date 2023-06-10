@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação</title>
+</head>
+<body>
+   <script lang="javascript">
+    notaBim = window.prompt('Informe a nota bimestral:');
+    notaRec = window.prompt('Informe a nota de recuperação:');
+
+    if (notaRec > notaBim) {
+        notaMedia = (notaRec+notaBim)/2;
+        document.write('Média após Recuperação = ' + notaMedia);
+    } else {
+        document.write('Média bimestral se manteve = ' + notaBim);
+    }
+   </script> 
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método ToUpperCase</title>
+</head>
+<body>
+    <h3>Formul&aacute;rio de Consulta de Curso:</h3>
+    <p>
+    <form name="FormCurso" action="" method="post">
+        Digite seu Curso: <input type="text" name="cursoDigitado" size="8" maxlength="4" /> (SIST)<p></p>
+        <input type="button" name="btn_validar" value="Validar" onclick="cadcurso()" />
+        <input type="reset" name="btn_cancelar" value="Cancelar" /><p></p>
+        Digite o c&oacute;digo do Curso: <input type="text" name="codigoCurso" size="15" maxlength="10" />
+    </form> 
+    </p>
+
+    <script lang="javascript">
+        var js_cursoDigitado;
+
+        function cadcurso(){
+            js_cursoDigitado = document.FormCurso.cursoDigitado.value;
+            if (js_cursoDigitado.toUpperCase()=='SIST'){
+                document.FormCurso.codigoCurso.value='SIST001/FB';
+            } else {
+                window.alert('Curso Inv\u00E1lido!');
+            } 
+        } 
+    </script>
+</body>
+</html>

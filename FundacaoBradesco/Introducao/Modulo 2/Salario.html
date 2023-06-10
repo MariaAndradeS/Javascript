@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+<body>
+    <script lang="javascript">
+        var horasTrabalhadas; 
+        var valorHoraTrabalhada; 
+        var descontoINSS; 
+        var totalDesconto; 
+        var salarioBruto; 
+        var salarioLiquido; 
+
+        horasTrabalhadas = parseFloat(window.prompt('Informe a Quantidade de Horas Trabalhadas/Mês: (135 a 180)','00'));
+        valorHoraTrabalhada = parseFloat(window.prompt('Informe o Valor da Hora Trabalhada: (25 a 50)','00'));
+        descontoINSS = parseFloat(window.prompt ('Informe o Percentual de Desconto INSS: (5 a 15)','00'));
+
+        salarioBruto = valorHoraTrabalhada * horasTrabalhadas;
+        totalDesconto = (descontoINSS/100) * salarioBruto;
+        salarioLiquido = salarioBruto - totalDesconto;
+
+        document.write('<p><b>DEMONSTRATIVO PARA CÁLCULO DO SALÁRIO LÍQUIDO</b>');
+
+        document.write('<p>Quantidade de Horas Trabalhadas (135 a 180) => <b>' + horasTrabalhadas + '</b>');
+        if (horasTrabalhadas > 180){
+            document.write(' ... (<b>Valor Máximo Excedido!</b>)');
+        }
+        if (horasTrabalhadas < 135){
+            document.write(' ... (<b>Valor Mínimo Inválido!</b>)');
+        }
+
+        document.write('<p>Valor da Hora Trabalhada (25 a 50) => <b>' + valorHoraTrabalhada + '</b>');
+        if (valorHoraTrabalhada > 50){
+            document.write(' ... (<b>Valor Máximo Excedido!</b>)');
+        }
+        if (valorHoraTrabalhada < 25){
+            document.write(' ... (<b>Valor Mínimo Inválido!</b>)');
+        }
+
+        document.write('<p>Percentual de Desconto INSS (5 a 15) => <b>' + descontoINSS + '</b>');
+        if (descontoINSS > 15){
+            document.write(' ... (<b>Valor Máximo Excedido!</b>)');
+        }
+        if (descontoINSS < 5){
+            document.write(' ... (<b>Valor Mínimo Inválido!</b>)');
+        }
+
+        document.write('<p>===========================================================');
+        document.write('<p><b>Salario BRUTO = </b>'+salarioBruto);
+        document.write('<p>Total de Desconto INSS = '+totalDesconto);
+        document.write('<p><p><b>Salario LÍQUIDO = </b>'+salarioLiquido);
+
+        if (salarioLiquido > 10500){
+            document.write(' ... (<b>Salário Elevado! </b>maior que 10.500)');
+        }
+        else {
+        if (salarioLiquido > 6000){
+            document.write(' ... (<b>Salário Satisfatório! </b>maior que 6.000)');
+        }
+        else {
+            if (salarioLiquido > 3000){
+                document.write(' ... (<b>Salário Moderado! </b>maior que 3.000)');
+            }
+            else {
+                document.write(' ... (<b>Salário inSatisfatório! </b>menor ou igual a 3.000)');
+            }
+        }
+    } 
+    </script>
+</body>
+</html>

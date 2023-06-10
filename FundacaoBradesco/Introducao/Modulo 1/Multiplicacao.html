@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicacao</title>
+</head>
+<body>
+    <h3>Multiplicação</h3>
+    <form name="Multiplicacao" action=" " method="post">
+        Entre com o valor 1: <input type="text" name="f_n1" /><p></p>
+        Entre com o valor 2: <input type="text" name="f_n2" /><p></p>
+        <input type="button" name="btn_multiplicar" value="Multiplicar" onClick="multiplicacao()" />
+        <input type="reset" name="btn_apagar" value="Apagar" />
+    </form>
+
+    <script lang="javascript">
+        var n1;
+        var n2;
+        var multiplicacao;
+
+        function multiplicacao() {
+            n1 = parseInt(document.Multiplicacao.f_n1.value);
+            n2 = parseInt(document.Multiplicacao.f_n2.value);    
+
+            multiplicacao = n1 * n2;
+
+            window.alert('Resultado da Multiplicação = ' + multiplicacao.toString());
+        }
+    </script>
+</body>
+</html>
